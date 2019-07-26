@@ -6,3 +6,54 @@ Date : 26/07/2019
 # Happy Halloween PCAP Challenge from Cloudshark
 
 ## Introduction.
+
+In the spirit of the season, we’re(Cloudshark team) offering our own Trick or Treat challenge – PCAP style. Take a stroll through this capture file and see if you can find the 5 hidden “pumpkins” that we’ve placed in there for you!
+[ref link](https://cloudshark.io/news/trick-or-treat-2018/). This is a PCAP CTF.<br>
+
+I'll be using [Wireshark](https://www.wireshark.org/), a network protocol analyzer. To get the pcap open [link](https://www.cloudshark.org/captures/0364b3948c7b) --> export --> Download file
+
+Enough talk.
+
+### Loading the pcap .
+The tool of choice is wireshark.<br><br>
+After opening wireshark file--> open then select location of pcap. <br><br>
+![loading pcap](img/Loading_data.png)
+
+<br><br><br>
+It looks like this.<br><br>
+![loaded](img/loaded.png)
+
+<br><br><br><br>
+### Flag one(Pumpkin 1):
+
+I first added a `Host` column to the view so as to see where the requests from different protocals may be coming from. Scrolling through the packets I noticed ascii characters that were coming from the same source ip, `136.71.248.124` . I proceeded to use a filter to get only HTTP requests from that ip.<br><br>
+`http && ip.addr == 136.71.248.124`
+
+![flag1](img/flg1.png)
+
+<br><br><br>
+### Flag two
+
+I started looking at the protocols. A lot of data was being sent over http so I used export object function inorder to get the files that were being transmitted.
+<br><br>
+![export](img/expo.png) <br><br>
+
+Using a window manager we can view all the files.
+![exportfiles](img/wind.png)<br><br>
+
+After inspecting the files I got the second flag.
+![flag 2](img/flg2.png)
+
+
+
+### Flag three
+
+
+
+
+
+
+
+
+
+
