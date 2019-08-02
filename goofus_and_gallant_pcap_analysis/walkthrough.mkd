@@ -1,0 +1,80 @@
+~~~
+Author : Muoki Caleb
+Date : 02/08/2019
+~~~
+
+# Introduction.
+
+The aim of this project is to analyse the pcap provided and come up with a report containing:
+
+* Date and approximate time of the infection.
+* The infected computer's IP address.
+* The infected computer's MAC address.
+* The infected computer's host name.
+* What caused the infection
+
+The tools used will be:
+
+* wireshark
+
+An extensive description of the lab is in the provided pdf file.
+
+### The infected computer's IP address.
+
+For a computer to communicate on a network it needs an ip address. There are two types; a static ips and dynamic ips. Most networks use a dynamic ips using a wireshark filter `bootp` we can get the ips that are being used on the network.<br>
+![dhcp](img/dhcp.png)
+
+There are 2 ips `10.1.25.1` and `10.1.25.119`. .`10.1.25.1` is the server ip while `10.1.25.119` is a client ip. This network has one host machine. This method makes the assumption that the network is using dhcp. A better way would be to get all the ips this takes care of the fact that the network may be using static ips. In wireshark there is a option to view the statistics of the pcap . We can view all the ipv4 ips in the pcap.<br>
+
+
+private/local ip address ranges are usually:
+
+* 10.0.0.0 – 10.255.255.255
+* 172.16.0.0 – 172.31.255.255
+* 192.168.0.0 – 192.168.255.255
+
+![staticip](img/stat.png)
+
+
+From this we can tell that there are 2 local ips on the network, `10.1.25.1` and `10.1.25.119`. The host device is `10.1.25.119`.
+To find more details avout the device we can use filter `bootp && ip.addr==10.1.25.119` .<br><br>
+![name](img/name.png)
+<br><br>
+from this can tell that the:
+
+*  Ip address is 10.1.25.119
+*  Mac address is a4:1f:72:a6:9c:1b
+*  Host name is Turkey-Tom
+
+### Identifying the cause of infection.
+
+One can replay the pcap using `tcpreplay` then listen to using an ids like snort to identify infections. 
+In my case I opted to using an online platform to analyze the traffic due to lack of system resources. 
+I uploaded the pcap to [packettotal](https://packettotal.com).
+<br><br>
+![packettotal](img/pckt.png)
+
+Among the alert signatures I found the name Bedep . I did a google search on Bedep and found that:
+<br><br>
+`Bedep is a trojan that opens a backdoor on a compromised system and can provide a malicious actor with full control over the system, as well as download additional malware. Once executed, Bedep can facilitate the theft of information or be used to perform click fraud to visit specific websites for financial gain. According to TrendMicro, the Bedep trojan is also used to turn infected systems into botnets for other malicious activities. Users are typically infected with Bedep through exposure to malicious advertising (malvertising) or exploit kits on compromised websites. When a user visits a webpage hosting a malvertisement, an exploit kit (EK) such as Angler or Hanjuan identifies a vulnerability on the user's machine to exploit and deliver Bedep. According to F-Secure, Bedep creates a hidden virtual desktop on the victim's computer, with an instance of Internet Explorer which is used to view unsolicited websites. Bedep has primarily targeted victims in the United States, followed by Japan.`
+
+We can also tell that the infection happened around 2015-11-24 16:16:38.
+using the sha256sum provided a search on virus total showed that the malware is also known as :
+![mm](img/nn.png)
+
+We can say this is what infected the device.
+
+#### Summary.
+
+* Date and approximate time of the infection. - 2015-11-24 16:16:38
+* The infected computer's IP address. -10.1.25.119
+* The infected computer's MAC address. -a4:1f:72:a6:9c:1b
+* The infected computer's host name. - Turkey-Tom
+* What caused the infection - Bedep trojan from an insecure website.
+
+ 
+
+
+
+
+
