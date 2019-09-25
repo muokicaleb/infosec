@@ -22,7 +22,9 @@ pswd  sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14
 
 ## Natas 3-4 
 
-pswd
+check robots.txt
+
+pswd Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
 
 
 ## Natas 4-5
