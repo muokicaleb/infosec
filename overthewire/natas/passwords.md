@@ -39,26 +39,26 @@ pswd  aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1
 
 ## Natas 6-7
 
-pswd
+pswd 7z3hEENjQtflzgnT29q7wAvMNfZdh0i9 
 
 ## Natas 7-8
 
-pswd
+pswd DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe
 
 
 ## Natas 8-9
 
-pswd
+pswd W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl
 
 
 ## Natas 9-10
 
-pswd
+pswd nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu
 
 
 ## Natas 10-11
 
-pswd
+pswd U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK
 
 ## Natas 11-12
 
