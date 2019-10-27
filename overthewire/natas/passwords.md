@@ -29,12 +29,13 @@ pswd Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
 
 ## Natas 4-5
 
-pswd
+pswd iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
 
 
 ## Natas 5-6
 
-pswd
+change cookie
+pswd  aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1
 
 ## Natas 6-7
 
