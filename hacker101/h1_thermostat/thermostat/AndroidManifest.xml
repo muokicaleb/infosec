@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" package="com.hacker101.level11" platformBuildVersionCode="1" platformBuildVersionName="1.0">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:icon="@drawable/ic_product_icon_outlined" android:label="@string/app_name" android:roundIcon="@drawable/ic_product_icon_outlined" android:supportsRtl="true" android:theme="@style/AppTheme" android:usesCleartextTraffic="true">
+        <activity android:name="com.hacker101.level11.ThermostatActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <provider android:authorities="com.hacker101.level11.lifecycle-process" android:exported="false" android:multiprocess="true" android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"/>
+    </application>
+</manifest>
