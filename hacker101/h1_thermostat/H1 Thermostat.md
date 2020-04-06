@@ -22,7 +22,13 @@ apktool d thermostat.apk
 ![decompile.png](./_resources/5355d2624e864053bd85be45145e3c0c.png)
 
 This created a folder with the source code.
+
 To easily look for the flags I used grep.
+
+```
+grep -rnw './thermostat' -e 'FLAG'
+
+```
 
 
 ![flags.png](./_resources/97eaea3e5ef74a2bbe09e42da11797ee.png)
